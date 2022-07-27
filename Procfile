@@ -1,0 +1,1 @@
+web: cd login-and-register-frontend && npm start   

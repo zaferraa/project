@@ -1,0 +1,24 @@
+{
+  "name": "login-and-register-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1", 
+      "build": "cd login-and-register-frontend && npm run build",
+        "install-client": "cd login-and-register-frontend && npm install",
+        "heroku-postbuild": "npm run install-client && npm run build",
+        "server": "nodemon index.js",
+        "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
+        "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.10"
+  }
+}
